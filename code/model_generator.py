@@ -27,7 +27,7 @@ def preprocess_image(img, target_size=(48, 48)):
   img = img.reshape(target_size[0], target_size[1], 1)
   return img
 
-data_path = "E:/Programin Projecs/aiml-project/src/train"
+data_path = "code/Dataset/train"
 num_emotions = 7
 images, labels = load_images_and_labels(data_path)
 

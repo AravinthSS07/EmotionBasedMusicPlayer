@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 
-model = load_model(r'E:\Programin Projecs\aiml-project\src\emotion_recognition_model.h5')
+model = load_model(r'code\TrainedModels\emotion_recognition_model.h5')
 
-face_cascade = cv2.CascadeClassifier(r'E:\Programin Projecs\aiml-project\src\haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'code\haarcascade_frontalface_default.xml')
 
 cap = cv2.VideoCapture(0)
 
