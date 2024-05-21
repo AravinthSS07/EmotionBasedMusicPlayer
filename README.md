@@ -1,2 +1,2 @@
 # EmotionBasedMusicPlayer
-An AI model which detects the emotion of a person and accordingly plays a spotify player from the given one
+This project uses Keras to train a CNN Model with the help of FER-2013 Dataset from Kaggle and after generating a model that model is used with OpenCV to detect the emotion on a person's face and based on the output of the emotion the spotify handler will play the playlist suppilied for that particular emotion
