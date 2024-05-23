@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
+import webbrowser
 
 model = load_model(r'code\TrainedModels\emotion_recognition_model.h5')
 
@@ -62,3 +63,18 @@ print(f"The Most Repeated Emotion in the person: {most_repeated(detected_emotion
 
 cap.release()
 cv2.destroyAllWindows()
+
+'''
+def open_playlist(playlist_url):
+   webbrowser.open(playlist_url)
+
+playlist_urls = {'Angry': '' , 
+                 'Disgust': '' , 
+                 'Fear': '' , 
+                 'Happy': 'https://open.spotify.com/playlist/37i9dQZF1EpuqQZrqvAenD?si=005749521a874c4c' , 
+                 'Neutral': 'https://open.spotify.com/playlist/7hBPTBteuoyasBiJRKIaSR?si=645b653e1fe24088&pt=aa7706046a69434a81f631e231835960' , 
+                 'Sad': '' , 
+                 'Surprise': '' }
+
+open_playlist(playlist_urls[f'{most_repeated(detected_emotion)}'])
+'''
