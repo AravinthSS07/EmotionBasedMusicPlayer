@@ -9,6 +9,7 @@ face_cascade = cv2.CascadeClassifier(r'code\haarcascade_frontalface_default.xml'
 cap = cv2.VideoCapture(0)
 
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
+detected_emotion=[]
 
 while True:
   ret, frame = cap.read()
@@ -36,12 +37,28 @@ while True:
     cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
     
     cv2.putText(frame, predicted_emotion, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+    detected_emotion.append(predicted_emotion)
     print(predicted_emotion)
 
   cv2.imshow('Emotion Recognition', frame)
 
+  if len(detected_emotion) >= 5:
+    break
+
   if cv2.waitKey(1) & 0xFF == ord('q'):
     break
+
+def most_repeated(List):
+    counter = 0
+    num = List[0]
+    for i in List:
+        curr_frequency = List.count(i)
+        if(curr_frequency> counter):
+            counter = curr_frequency
+            num = i
+    return num
+
+print(f"The Most Repeated Emotion in the person: {most_repeated(detected_emotion)}")
 
 cap.release()
 cv2.destroyAllWindows()
