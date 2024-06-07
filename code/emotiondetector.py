@@ -64,7 +64,6 @@ print(f"The Most Repeated Emotion in the person: {most_repeated(detected_emotion
 cap.release()
 cv2.destroyAllWindows()
 
-'''
 def open_playlist(playlist_url):
    webbrowser.open(playlist_url)
 
@@ -77,4 +76,3 @@ playlist_urls = {'Angry': '' ,
                  'Surprise': '' }
 
 open_playlist(playlist_urls[f'{most_repeated(detected_emotion)}'])
-'''
